@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Smart Settlement - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#83fba5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#8d9094",
+                        "on-surface": "#141b2b",
+                        "surface-container-high": "#e1e8fd",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#66dd8b",
+                        "tertiary-fixed-dim": "#c4c7ca",
+                        "on-secondary-fixed": "#00210c",
+                        "primary-container": "#002366",
+                        "surface-dim": "#d3daef",
+                        "tertiary-container": "#26292c",
+                        "secondary": "#006d36",
+                        "tertiary": "#111518",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "on-tertiary-fixed": "#191c1f",
+                        "surface-container-highest": "#dce2f7",
+                        "on-surface-variant": "#444650",
+                        "on-primary-fixed-variant": "#2a4386",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-container": "#e9edff",
+                        "on-background": "#141b2b",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "on-primary-container": "#758dd5",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "secondary-fixed": "#83fba5",
+                        "surface": "#f9f9ff",
+                        "background": "#f9f9ff",
+                        "on-primary-fixed": "#00174a",
+                        "on-secondary": "#ffffff",
+                        "outline": "#757682",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-secondary-container": "#00743a",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-variant": "#dce2f7",
+                        "surface-tint": "#435b9f",
+                        "outline-variant": "#c5c6d2",
+                        "inverse-surface": "#293040",
+                        "inverse-primary": "#b3c5ff",
+                        "primary": "#00113a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#e0e2e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "md": "16px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "2xl": "48px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .card-shadow { box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05); }
+    </script>
+</head>
+<body class="bg-background text-on-background">
+
+    <!-- SideNavBar -->
+    <aside class="bg-surface h-screen w-64 fixed left-0 top-0 border-r border-outline-variant flex flex-col py-lg px-md z-50">
+        <div class="mb-xl">
+            <h1 class="font-headline-md text-headline-md font-bold text-primary">AI Smart Settlement</h1>
+            <p class="text-on-surface-variant font-label-md text-label-md">ZRG Internal Version</p>
+        </div>
+        
+        <nav class="flex-1 space-y-xs">
+            <a class="flex items-center gap-sm p-sm rounded-lg text-primary font-bold border-r-2 border-primary hover:bg-surface-container-low transition-colors" href="#">
+                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                <span class="font-body-md text-body-md">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+                <span class="material-symbols-outlined" data-icon="payments">payments</span>
+                <span class="font-body-md text-body-md">Settlements</span>
+            </a>
+            <a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+                <span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+                <span class="font-body-md text-body-md">Configurations</span>
+            </a>
+            <a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+                <span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                <span class="font-body-md text-body-md">Reports</span>
+            </a>
+            <a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+                <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                <span class="font-body-md text-body-md">Settings</span>
+            </a>
+        </nav>
+
+        <div class="mt-auto pt-lg border-t border-outline-variant space-y-xs">
+            <button class="w-full bg-primary text-on-primary py-sm rounded-xl font-label-md text-label-md mb-md active:scale-[0.98] transition-transform">
+                New Settlement
+            </button>
+            <a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+                <span class="material-symbols-outlined" data-icon="help">help</span>
+                <span class="font-body-md text-body-md">Support</span>
+            </a>
+            <a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+                <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                <span class="font-body-md text-body-md">Sign Out</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- TopAppBar -->
+    <header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface flex justify-between items-center px-gutter border-b border-outline-variant z-40">
+        <div class="flex items-center gap-lg">
+            <span class="font-headline-md text-headline-md font-black text-on-surface">AI Smart Settlement</span>
+            <nav class="hidden md:flex gap-md">
+                <a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Direct Settlement</a>
+                <a class="text-on-surface-variant hover:text-primary transition-opacity font-label-md text-label-md" href="#">Bulk Upload</a>
+            </nav>
+        </div>
+        
+        <div class="flex items-center gap-md">
+            <div class="relative hidden lg:block">
+                <input class="bg-surface-container-low border border-outline-variant rounded-xl px-md py-xs text-body-sm w-64 focus:ring-2 focus:ring-primary/10 outline-none" placeholder="Search transactions..." type="text"/>
+            </div>
+            <button class="text-on-surface-variant hover:text-primary transition-opacity">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+            </button>
+            <div class="flex items-center gap-sm ml-sm cursor-pointer hover:opacity-80 transition-opacity">
+                <div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+                    <img alt="User Profile" data-alt="A clean, minimalist headshot of a professional executive in a business setting, captured with soft, high-key studio lighting that emphasizes a bright corporate aesthetic. The background is a soft-focus office environment with neutral tones and glass textures. The person is looking directly at the camera with a calm, confident expression, fitting for a premium fintech application." src="https://openui.fly.dev/openui/80x80.svg?text=👤"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-16 p-lg">
+        <div class="max-w-container-max mx-auto space-y-lg">
+            
+            <!-- Top Card: Exchange Rate Configuration -->
+            <section class="bg-surface p-lg rounded-xl card-shadow border border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md">
+                    <div>
+                        <h2 class="font-headline-md text-headline-md text-primary mb-xs">Exchange Rate Configuration</h2>
+                        <p class="text-on-surface-variant font-body-sm text-body-sm">Manage settlement benchmarks and manual FX overrides.</p>
+                    </div>
+                    <div class="flex items-center gap-lg bg-surface-container-low p-sm rounded-xl">
+                        <div class="flex items-center gap-sm">
+                            <span class="font-label-md text-label-md text-on-surface-variant">Auto API</span>
+                            <div class="relative inline-flex items-center cursor-pointer">
+                                <input checked="" class="sr-only peer" type="checkbox"/>
+                                <div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+                            </div>
+                            <span class="font-label-md text-label-md text-secondary font-bold">Manual Override</span>
+                        </div>
+                        <div class="h-8 w-px bg-outline-variant"></div>
+                        <div class="flex items-center gap-sm">
+                            <label class="font-label-md text-label-md text-on-surface-variant">Benchmark (VND/RMB)</label>
+                            <input class="w-24 bg-white border border-outline-variant rounded px-sm py-xs font-headline-md text-headline-md text-primary focus:border-primary outline-none text-center" type="text" value="3800"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Middle Card: Invoice Processing -->
+            <section class="bg-surface p-lg rounded-xl card-shadow border border-gray-200">
+                <h2 class="font-headline-md text-headline-md text-primary mb-md">Invoice Processing</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-lg">
+                    <div class="lg:col-span-3">
+                        <div class="border-2 border-dashed border-outline-variant rounded-xl p-3xl flex flex-col items-center justify-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors group cursor-pointer">
+                            <span class="material-symbols-outlined text-outline-variant group-hover:text-primary text-[48px] mb-md" data-icon="cloud_upload">cloud_upload</span>
+                            <p class="font-headline-md text-headline-md text-on-surface-variant mb-xs">Drag and drop invoice images here</p>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Supports PDF, PNG, JPG (Max 10MB per file)</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-md">
+                        <div class="flex-1 bg-primary-container rounded-xl p-lg text-on-primary-container flex flex-col items-center justify-center text-center">
+                            <button class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center mb-md hover:scale-105 active:scale-95 transition-transform">
+                                <span class="material-symbols-outlined text-[32px]" data-icon="mic">mic</span>
+                            </button>
+                            <p class="font-label-md text-label-md uppercase tracking-widest mb-xs">Voice Input</p>
+                            <p class="font-body-sm text-body-sm opacity-80">Dictate expense details for instant processing</p>
+                        </div>
+                        <div class="p-md bg-secondary-container rounded-xl flex items-center gap-md">
+                            <div class="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-on-secondary">
+                                <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-label-md text-on-secondary-container">AI Status</p>
+                                <p class="font-body-sm text-body-sm font-bold text-on-secondary-container">Engine: High Precision</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Card: Settlement Preview -->
+            <section class="bg-surface p-lg rounded-xl card-shadow border border-gray-200">
+                <div class="flex justify-between items-center mb-lg">
+                    <h2 class="font-headline-md text-headline-md text-primary">Settlement Preview</h2>
+                    <div class="flex gap-sm">
+                        <button class="px-md py-xs border border-outline text-primary font-label-md text-label-md rounded-lg hover:bg-surface-container-low">Export CSV</button>
+                        <button class="px-md py-xs bg-secondary text-white font-label-md text-label-md rounded-lg hover:brightness-110">Hoàn thành</button>
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-surface-container-low border-b border-outline-variant">
+                                <th class="px-md py-sm font-label-md text-label-md text-on-surface-variant uppercase">STT</th>
+                                <th class="px-md py-sm font-label-md text-label-md text-on-surface-variant uppercase">NỘI DUNG (Trung/Việt)</th>
+                                <th class="px-md py-sm font-label-md text-label-md text-on-surface-variant uppercase text-right">SỐ LƯỢNG</th>
+                                <th class="px-md py-sm font-label-md text-label-md text-on-surface-variant uppercase text-right">ĐƠN GIÁ RMB</th>
+                                <th class="px-md py-sm font-label-md text-label-md text-on-surface-variant uppercase text-right">ĐƠN GIÁ VND</th>
+                                <th class="px-md py-sm font-label-md text-label-md text-on-surface-variant uppercase text-right">THÀNH TIỀN</th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-body-sm text-body-sm divide-y divide-gray-100">
+                            <tr class="hover:bg-surface-container-lowest transition-colors">
+                                <td class="px-md py-md text-on-surface font-medium">1</td>
+                                <td class="px-md py-md">
+                                    <div class="flex flex-col">
+                                        <span class="text-on-surface">清华酒店16/12</span>
+                                        <span class="text-on-surface-variant italic">Khách sạn Thanh Hóa ngày 16/12</span>
+                                    </div>
+                                </td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">1</td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">181.58</td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">690,000</td>
+                                <td class="px-md py-md text-right font-bold text-primary">690,000</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-lowest transition-colors">
+                                <td class="px-md py-md text-on-surface font-medium">2</td>
+                                <td class="px-md py-md">
+                                    <div class="flex flex-col">
+                                        <span class="text-on-surface">议案酒店17/12</span>
+                                        <span class="text-on-surface-variant italic">Khách sạn ở Nghệ An ngày 17/12</span>
+                                    </div>
+                                </td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">1</td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">131.58</td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">500,000</td>
+                                <td class="px-md py-md text-right font-bold text-primary">500,000</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-lowest transition-colors">
+                                <td class="px-md py-md text-on-surface font-medium">3</td>
+                                <td class="px-md py-md">
+                                    <div class="flex flex-col">
+                                        <span class="text-on-surface">跟议案经销商吃饭 17/12</span>
+                                        <span class="text-on-surface-variant italic">Ăn tối với npp Nghệ An ngày 17/12</span>
+                                    </div>
+                                </td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">1</td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">228.95</td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">870,000</td>
+                                <td class="px-md py-md text-right font-bold text-primary">870,000</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-lowest transition-colors">
+                                <td class="px-md py-md text-on-surface font-medium">4</td>
+                                <td class="px-md py-md">
+                                    <div class="flex flex-col">
+                                        <span class="text-on-surface">清华酒店18/12</span>
+                                        <span class="text-on-surface-variant italic">Khách sạn Thanh Hóa ngày 18/12</span>
+                                    </div>
+                                </td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">1</td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">181.58</td>
+                                <td class="px-md py-md text-right font-bold text-on-surface">690,000</td>
+                                <td class="px-md py-md text-right font-bold text-primary">690,000</td>
+                            </tr>
+                            <tr class="bg-surface-container-low border-t-2 border-outline-variant font-bold">
+                                <td class="px-md py-md text-right text-on-surface" colspan="5">Tổng cộng (Total):</td>
+                                <td class="px-md py-md text-right text-primary text-headline-md">2,750,000 ₫</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html></style></head><body></body></html>
